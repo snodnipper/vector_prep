@@ -7,7 +7,9 @@ fi
 
 # Build container to clone repository
 echo "Build the repo cloner Container"
+cd 1_repo_clone 
 sudo docker build -t mapbox-docker .
+cd ..
 
 echo We are here $(pwd)
 # Clone or update, depending if it is there
