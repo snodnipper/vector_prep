@@ -19,3 +19,4 @@ else
    sudo docker run -v $(pwd):/root mapbox-docker /bin/bash -c "cd mapbox-gl-native;/usr/bin/git pull"
 fi
 
+chown -R ubuntu:ubuntu mapbox-gl-native
