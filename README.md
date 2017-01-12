@@ -14,6 +14,7 @@ export DOWNLOAD_MBTILES="https://download-location.com/OS_data_z15_0_7.mbtiles"
 We can then execute the workflow:
 ```console
 ./InstallDocker.sh
+./0_data_prepare/run.sh
 ./1_repo_clone/run.sh
 ./2_build_sdk_containers/run.sh
 ./3_download_from_endpoint/run.sh
