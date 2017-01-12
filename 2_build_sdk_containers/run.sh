@@ -10,3 +10,4 @@ echo $(pwd)
 cd mapbox-gl-native
 sudo ./docker/build.sh
 sudo ./docker/linux/run.sh
+
