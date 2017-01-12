@@ -18,3 +18,5 @@ We can then execute the workflow:
 ./2_build_sdk_containers/run.sh
 ./3_download_from_endpoint/run.sh
 ```
+
+Note: the example download url points to a Mapbox endpoint.  Mapbox licensing only permits downloads for use by the device initiating the download - you should therefore ensure that your actions are permitted according to the Mapbox TOS.  Typically, one would use their own download location to obtain their own content (not, say, Streets-V9 etc. - which is Mapbox data!).
