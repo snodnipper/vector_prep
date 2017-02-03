@@ -22,8 +22,8 @@ function dockerPrepare {
   fi
 
 
-  sudo apt-get update
-  sudo apt-get install apt-transport-https ca-certificates
+  sudo apt-get -y update
+  sudo apt-get -y install apt-transport-https ca-certificates
 
   sudo apt-key adv \
   --keyserver hkp://ha.pool.sks-keyservers.net:80 \
@@ -44,17 +44,17 @@ function dockerPrepare {
   fi
   echo "$DOCKER_REPO" | sudo tee /etc/apt/sources.list.d/docker.list
 
-  sudo apt-get update
+  sudo apt-get -y update
   apt-cache policy docker-engine
 
   if [ "$UBUNTU_RELEASE" != "14.04" ] &&
   [ "$UBUNTU_RELEASE" != "15.10" ] &&
   [ "$UBUNTU_RELEASE" != "16.04" ]; then
-    sudo apt-get update
-    sudo apt-get install linux-image-extra-"$(uname -r)" linux-image-extra-virtual
+    sudo apt-get -y update
+    sudo apt-get -y install linux-image-extra-"$(uname -r)" linux-image-extra-virtual
     elif [ "$UBUNTU_RELEASE" == "12.04" ]; then
-    sudo apt-get update
-    sudo apt-get install linux-image-generic-lts-trusty
+    sudo apt-get -y update
+    sudo apt-get -y install linux-image-generic-lts-trusty
     if [ ! -f rebooted_for_precise ]; then
       touch rebooted_for_precise
       sudo reboot
@@ -67,8 +67,8 @@ function dockerPrepare {
 # Note: for production versions a specific version should be used
 #======================================================================
 function dockerInstall() {
-  sudo apt-get update
-  sudo apt-get install docker-engine
+  sudo apt-get -y update
+  sudo apt-get -y install docker-engine
   sudo service docker start
   sudo docker run hello-world
 }
